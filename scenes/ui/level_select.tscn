@@ -1,0 +1,195 @@
+[gd_scene load_steps=21 format=3 uid="uid://d2ron5emqyt1k"]
+
+[ext_resource type="Script" path="res://src/ui/level_select.gd" id="1_2dy28"]
+[ext_resource type="Texture2D" uid="uid://dgel7xp2ypge3" path="res://assets/world/Background/Brown.png" id="2_elsed"]
+[ext_resource type="FontFile" uid="uid://iob4wm5uujex" path="res://assets/ui/Kenney Pixel Square.ttf" id="3_amu2g"]
+[ext_resource type="Texture2D" uid="uid://4gt004di2s7a" path="res://assets/ui/Menu/Buttons/Back.png" id="4_20d61"]
+[ext_resource type="Texture2D" uid="uid://cgd1hcjx73r3o" path="res://assets/ui/Menu/Levels/01.png" id="4_lqo0b"]
+[ext_resource type="Texture2D" uid="uid://b5uysdjcq25rj" path="res://assets/ui/Menu/Levels/02.png" id="5_erf0k"]
+[ext_resource type="Texture2D" uid="uid://4x3prkjejfkh" path="res://assets/ui/Menu/Levels/01_pressed.png" id="5_v66qc"]
+[ext_resource type="Texture2D" uid="uid://ckbtjxdqmdlf1" path="res://assets/ui/Menu/Levels/03.png" id="6_o4mox"]
+[ext_resource type="Texture2D" uid="uid://yam6pyroa40y" path="res://assets/ui/Menu/Levels/04.png" id="7_60cm7"]
+[ext_resource type="Texture2D" uid="uid://dsdoig2bjfr4o" path="res://assets/ui/Menu/Levels/02_pressed.png" id="7_b36el"]
+[ext_resource type="Texture2D" uid="uid://cl62f7xlis21e" path="res://assets/ui/Menu/Levels/05.png" id="8_dmr1a"]
+[ext_resource type="Texture2D" uid="uid://cc8og86caimk6" path="res://assets/ui/Menu/Levels/03_pressed.png" id="9_csea2"]
+[ext_resource type="Texture2D" uid="uid://cwhanhepkkwvh" path="res://assets/ui/Menu/Levels/06.png" id="9_m7n5v"]
+[ext_resource type="Texture2D" uid="uid://bqg2x1cuveiqn" path="res://assets/ui/Menu/Levels/04_pressed.png" id="11_gnpex"]
+[ext_resource type="Texture2D" uid="uid://b5iaol5kdtcgv" path="res://assets/ui/Menu/Levels/05_pressed.png" id="13_12dte"]
+[ext_resource type="Texture2D" uid="uid://bqdbdr2biu851" path="res://assets/ui/Menu/Levels/06_pressed.png" id="15_yphl7"]
+[ext_resource type="Texture2D" uid="uid://cqjfh2bksgpei" path="res://assets/ui/Menu/Buttons/Back_pressed.png" id="17_temgx"]
+[ext_resource type="Texture2D" uid="uid://bmn2tmhrnq2ac" path="res://assets/ui/Menu/Buttons/Close.png" id="18_8ojc0"]
+[ext_resource type="AudioStream" uid="uid://c0v4xorsitkd1" path="res://assets/audio/button_pressed.wav" id="18_n0pxr"]
+[ext_resource type="Texture2D" uid="uid://c0iovtprry34v" path="res://assets/ui/Menu/Buttons/Close_pressed.png" id="19_ra5ly"]
+
+[node name="LevelSelect" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2dy28")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("2_elsed")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0784314, 0.101961, 0.121569, 1)
+theme_override_fonts/font = ExtResource("3_amu2g")
+theme_override_font_sizes/font_size = 32
+text = "Level Select"
+
+[node name="Lvl1" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -72.0
+offset_right = -80.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("4_lqo0b")
+texture_pressed = ExtResource("5_v66qc")
+stretch_mode = 0
+
+[node name="Lvl2" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -14.0
+offset_right = -80.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("5_erf0k")
+texture_pressed = ExtResource("7_b36el")
+stretch_mode = 0
+
+[node name="Lvl3" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = 45.0
+offset_right = -80.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("6_o4mox")
+texture_pressed = ExtResource("9_csea2")
+stretch_mode = 0
+
+[node name="Lvl4" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -72.0
+offset_right = 116.0
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("7_60cm7")
+texture_pressed = ExtResource("11_gnpex")
+stretch_mode = 0
+
+[node name="Lvl5" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -14.0
+offset_right = 116.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("8_dmr1a")
+texture_pressed = ExtResource("13_12dte")
+stretch_mode = 0
+
+[node name="Lvl6" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = 45.0
+offset_right = 116.0
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_m7n5v")
+texture_pressed = ExtResource("15_yphl7")
+stretch_mode = 0
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -50.0
+offset_right = 55.0
+offset_bottom = -5.0
+grow_vertical = 0
+texture_normal = ExtResource("4_20d61")
+texture_pressed = ExtResource("17_temgx")
+stretch_mode = 0
+
+[node name="ExitButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 426.0
+offset_top = -50.0
+offset_right = 471.0
+offset_bottom = -5.0
+grow_vertical = 0
+texture_normal = ExtResource("18_8ojc0")
+texture_pressed = ExtResource("19_ra5ly")
+stretch_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_n0pxr")
+
+[connection signal="pressed" from="Lvl1" to="." method="_on_lvl_1_pressed"]
+[connection signal="pressed" from="Lvl2" to="." method="_on_lvl_2_pressed"]
+[connection signal="pressed" from="Lvl3" to="." method="_on_lvl_3_pressed"]
+[connection signal="pressed" from="Lvl4" to="." method="_on_lvl_4_pressed"]
+[connection signal="pressed" from="Lvl5" to="." method="_on_lvl_5_pressed"]
+[connection signal="pressed" from="Lvl6" to="." method="_on_lvl_6_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

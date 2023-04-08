@@ -1,0 +1,68 @@
+[gd_scene load_steps=4 format=3 uid="uid://xftd48ul0v28"]
+
+[ext_resource type="Texture2D" uid="uid://f221s6f17y1t" path="res://assets/world/Background/Gray.png" id="1_2sn1e"]
+[ext_resource type="Script" path="res://src/ui/game_over.gd" id="1_e8wiq"]
+[ext_resource type="FontFile" uid="uid://bpt2dhxxp22p0" path="res://assets/ui/Kenney Pixel.ttf" id="3_n4u61"]
+
+[node name="GameOver" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e8wiq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 270.0
+texture = ExtResource("1_2sn1e")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -194.0
+offset_right = 194.0
+offset_bottom = 87.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+theme_override_fonts/font = ExtResource("3_n4u61")
+theme_override_font_sizes/font_size = 80
+text = "Game Over LOSER!"
+
+[node name="LevelSelect" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -60.0
+offset_top = 85.0
+offset_right = 60.0
+offset_bottom = 130.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_n4u61")
+theme_override_font_sizes/font_size = 32
+text = "Level Select"
+
+[node name="QuitGame" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -68.0
+offset_top = 144.0
+offset_right = 68.0
+offset_bottom = 189.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_n4u61")
+theme_override_font_sizes/font_size = 32
+text = "Quit Game    
+"
+
+[connection signal="pressed" from="LevelSelect" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="QuitGame" to="." method="_on_quit_game_pressed"]

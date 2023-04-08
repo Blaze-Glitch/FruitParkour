@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6m0hw0ie03xh"]
+
+[ext_resource type="Texture2D" uid="uid://4otou0ua33sb" path="res://assets/world/Traps/Spiked Ball/Chain.png" id="1_7oraf"]
+[ext_resource type="Script" path="res://src/misc/trap.gd" id="1_ahrvu"]
+[ext_resource type="Texture2D" uid="uid://cg6hdt4fa8o14" path="res://assets/world/Traps/Spiked Ball/Spiked Ball.png" id="2_6hvje"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_llx3m"]
+radius = 12.0
+
+[node name="SpikedBallTrap" type="Node2D"]
+script = ExtResource("1_ahrvu")
+
+[node name="Chain" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -11)
+texture = ExtResource("1_7oraf")
+
+[node name="Chain2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -17)
+texture = ExtResource("1_7oraf")
+
+[node name="Chain3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -23)
+texture = ExtResource("1_7oraf")
+
+[node name="SpikedBall" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_6hvje")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0.5, 1)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_llx3m")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

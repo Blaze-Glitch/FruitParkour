@@ -1,0 +1,94 @@
+[gd_scene load_steps=14 format=3 uid="uid://khmm61p54n2o"]
+
+[ext_resource type="Texture2D" uid="uid://bm6atuoymtgdr" path="res://assets/world/Traps/Saw/Chain.png" id="1_kp1od"]
+[ext_resource type="Script" path="res://src/misc/trap.gd" id="1_rt3ef"]
+[ext_resource type="Texture2D" uid="uid://d0uxkabkaalns" path="res://assets/world/Traps/Saw/On (38x38).png" id="1_wnku2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sdqk"]
+atlas = ExtResource("1_wnku2")
+region = Rect2(0, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vlaf"]
+atlas = ExtResource("1_wnku2")
+region = Rect2(38, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvtsk"]
+atlas = ExtResource("1_wnku2")
+region = Rect2(76, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6n3o"]
+atlas = ExtResource("1_wnku2")
+region = Rect2(114, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l0dd"]
+atlas = ExtResource("1_wnku2")
+region = Rect2(152, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6b5e"]
+atlas = ExtResource("1_wnku2")
+region = Rect2(190, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72h1e"]
+atlas = ExtResource("1_wnku2")
+region = Rect2(228, 0, 38, 38)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3wae"]
+atlas = ExtResource("1_wnku2")
+region = Rect2(266, 0, 38, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d5uta"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sdqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vlaf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvtsk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6n3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l0dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6b5e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72h1e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3wae")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xls7f"]
+radius = 18.0
+
+[node name="SawTrap" type="Node2D"]
+script = ExtResource("1_rt3ef")
+
+[node name="Chain" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_kp1od")
+
+[node name="On" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_d5uta")
+autoplay = "default"
+frame_progress = 0.820532
+speed_scale = 3.0
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_xls7f")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

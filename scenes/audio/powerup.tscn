@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8c84e225ygtq"]
+
+[ext_resource type="AudioStream" uid="uid://b8xake2livgmt" path="res://assets/audio/powerup.wav" id="1_e17g4"]
+
+[node name="Powerup" type="AudioStreamPlayer"]
+stream = ExtResource("1_e17g4")
+volume_db = -2.0
