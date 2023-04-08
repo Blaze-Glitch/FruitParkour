@@ -15,6 +15,7 @@ extends CharacterBody2D
 
 @export var effect = 0 # 0 = none, 1 = apple, 2 = banana, 3 = orange
 
+# This function deals with powerups
 func special_effects():
 	match effect:
 		0:
@@ -51,7 +52,7 @@ func animations(h_axis, v_axis):
 	else: 
 		character_sprite.flip_h = true
 	
-	#Animation Player Animations
+	# Other Player Animations
 	if is_on_floor():	
 		if velocity != Vector2.ZERO:
 			character_sprite.play("run")
@@ -67,7 +68,7 @@ func animations(h_axis, v_axis):
 		
 		else:
 			character_sprite.play("fall")
-			
+
 func _ready():
 	special_effect.play("none")
 
